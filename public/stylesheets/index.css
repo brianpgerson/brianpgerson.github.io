@@ -3,6 +3,18 @@ html {
   color: ghostwhite;
 }
 
+
+a {
+  text-decoration: none;
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #ee017b;
+}
+
 body {
   height: 100%;
   width: 100%;
