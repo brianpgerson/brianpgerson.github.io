@@ -5,6 +5,6 @@ $(function(){
       setTimeout(function(){
         $('.horizontal-border').addClass('grow-tall');
       }, 480);
-    }, 1000);
+    }, 200);
   });
 });
