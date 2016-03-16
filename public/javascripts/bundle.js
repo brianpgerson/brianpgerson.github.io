@@ -329,7 +329,7 @@
 	  }.bind(this));
 	
 	  var wallsToCheck = this.getRelevantWalls();
-	  this.checkForCollision(wallsToCheck);
+	  // this.checkForCollision(wallsToCheck);
 	  this.globalSpeed += 0.001;
 	  this.handleRotationSpeed();
 	};
