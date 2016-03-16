@@ -125,7 +125,7 @@ Game.prototype.step = function(time) {
   }.bind(this));
 
   wallsToRemove.forEach(function(index){
-    debugger
+    debugger;
     this.walls.splice(index, 1);
   }.bind(this));
 
