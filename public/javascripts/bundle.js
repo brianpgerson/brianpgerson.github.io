@@ -324,12 +324,11 @@
 	    }
 	  }.bind(this));
 	
-	  wallsToRemove.forEach(function(index){
-	    this.walls.splice(index, 1);
-	  }.bind(this));
+	  var spliceLength = wallsToRemove[0] ? Math.max(wallsToRemove) + 1 : 0;
+	  this.walls.splice(0, spliceLength);
 	
 	  var wallsToCheck = this.getRelevantWalls();
-	  // this.checkForCollision(wallsToCheck);
+	  this.checkForCollision(wallsToCheck);
 	  this.globalSpeed += 0.001;
 	  this.handleRotationSpeed();
 	};
