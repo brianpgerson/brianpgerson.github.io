@@ -266,3 +266,74 @@ h1, h2, h3 {
 #dumbpara {
   margin-left: 15px;
 }
+
+@media (min-width: 650px) {
+  .story-box {
+    padding: 30px;
+    background-color: rgba(0,0,0,.8);
+    height: 90%;
+    font-weight: lighter;
+    color: white;
+    transition: background-color, 0.5s, ease-in-out;
+  }
+
+  .story-box-border {
+    width: 90%;
+    font-size: 2em;
+  }
+
+  .horizontal-border {
+    display: none;
+  }
+
+  .circular-image {
+    background-size: contain;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    float: left;
+  }
+
+  .header {
+    width: 80%;
+    height: 150px;
+    font-size: 2em;
+    }
+
+  .projects-container {
+    width: 90%;
+    min-width: 0;
+  }
+
+  .project {
+    padding: 0 20px 20px 20px;
+    width: 90%;
+  }
+
+  .project-pic {
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    margin: 0 auto;
+  }
+
+  .project-pic-link {
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .project li, .project p {
+    clear: both;
+    font-size: 0.9em;
+  }
+
+  .project p {
+    margin-left: 25px;
+  }
+
+  .contact {
+    width: 90%;
+  }
+
+}
