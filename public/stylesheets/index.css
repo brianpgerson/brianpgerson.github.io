@@ -318,6 +318,9 @@ h1, h2, h3 {
   }
 
   .project-pic-link {
+    content: "";
+    display: table;
+    clear: both;
     height: 100%;
     width: 50%;
     margin: 0 auto;
