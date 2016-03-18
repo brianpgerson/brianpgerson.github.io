@@ -206,7 +206,7 @@
 	var WIDTH = 800;
 	var HEIGHT = 600;
 	
-	function Game(){
+	function Game() {
 	  this.mainColor = "#ee017b";
 	  this.centerRadius = 70;
 	  this.playerRadius = 90;
@@ -251,7 +251,7 @@
 	  ctx.translate(WIDTH/2, HEIGHT/2);
 	  ctx.rotate(this.rotation);
 	  this.backgroundShape.drawBackground(ctx);
-	  this.walls.forEach(function(wall){wall.draw(ctx);});
+	  this.walls.forEach(function(wall) {wall.draw(ctx);});
 	  this.spaceMan.drawSelf(ctx);
 	  this.centerShape.drawCenterShape(ctx);
 	  ctx.restore();
@@ -289,7 +289,7 @@
 	      }
 	    }
 	    var toAdd = [];
-	    sections.forEach(function(secNum){
+	    sections.forEach(function(secNum) {
 	      toAdd.push(
 	        new Wall({
 	          section: secNum,
@@ -305,18 +305,9 @@
 	
 	};
 	
-	Game.prototype.handleWalls = function (wall, index) {
-	
-	};
-	
-	Game.prototype.step = function(time) {
-	  this.time = time;
-	  this.spaceMan.move();
-	
-	  this.addWalls();
-	
+	Game.prototype.handleWalls = function () {
 	  var wallsToRemove = [];
-	  this.walls.forEach(function(wall, index){
+	  this.walls.forEach(function(wall, index) {
 	    if (wall.distance < this.centerRadius) {
 	      wallsToRemove.push(index);
 	    } else {
@@ -326,11 +317,19 @@
 	
 	  var spliceLength = wallsToRemove[0] ? Math.max(wallsToRemove) + 1 : 0;
 	  this.walls.splice(0, spliceLength);
+	};
+	
+	Game.prototype.step = function(time) {
+	  this.time = time;
+	  this.spaceMan.move();
+	
+	  this.addWalls();
+	  this.handleWalls();
 	
 	  var wallsToCheck = this.getRelevantWalls();
 	  this.checkForCollision(wallsToCheck);
 	  this.globalSpeed += 0.001;
-	  this.handleRotationSpeed();
+	  this.handleRotationSpeed2();
 	};
 	
 	Game.prototype.handleRotationSpeed = function () {
@@ -341,13 +340,15 @@
 	    highs: [0.008, 0.009, 0.01],
 	    veryhighs: [0.05, 0.06, 0.07]
 	  };
-	  function randomSpeed(type){
-	    return speeds[type][Math.floor(Math.random() * 3)] * alternators[Math.floor(Math.random() * 2)] ;
+	  function randomSpeed(type) {
+	    return speeds[type][Math.floor(Math.random() * 3)] *
+	      alternators[Math.floor(Math.random() * 2)] ;
 	  }
 	
-	  function makeItWorse(){
+	  function makeItWorse() {
 	    var wow = [-1, 1, 1, 1];
-	    return speeds["veryhighs"][Math.floor(Math.random() * 3)] * wow[Math.floor(Math.random() * 3)] ;
+	    return speeds["veryhighs"][Math.floor(Math.random() * 3)] *
+	      wow[Math.floor(Math.random() * 3)] ;
 	  }
 	  var newSpeed = this.rotationSpeed;
 	  if (400 < this.time && this.time < 900) {
@@ -358,7 +359,7 @@
 	    newSpeed += randomSpeed("highs");
 	  } else if (2300 < this.time && this.time < 3000) {
 	    newSpeed += randomSpeed("veryhighs");
-	  } else if (3000 < this.time && this.time < 6000){
+	  } else if (3000 < this.time && this.time < 6000) {
 	    newSpeed += randomSpeed('veryhighs');
 	  } else if (6000 < this.time) {
 	    newSpeed += makeItWorse();
@@ -369,13 +370,16 @@
 	  this.rotationSpeed = newSpeed;
 	};
 	
-	//alternate implementation in progress
-	Game.prototype.handleRotationSpeed2 = function () {
+	Game.prototype.random = function(range) {
+	  return Math.floor(Math.random() * range);
+	}
+	
+	Game.prototype.randomSpeed = function (type) {
 	  var globalExtrema = {
-	    smalls: [-1, 1],
-	    mids: [-2, 2],
-	    highs: [-3, 3],
-	    veryhighs: [-5, 5]
+	    smalls: 1,
+	    mids: 2,
+	    highs: 3,
+	    veryhighs: 5
 	  };
 	
 	  var speeds = {
@@ -385,33 +389,54 @@
 	    veryhighs: [0.05, 0.06, 0.07]
 	  };
 	
-	  var alternators = [-1, 1];
+	  var direction = [-1, 1];
 	
-	  function randomSpeed(type){
-	    if (type === "smalls") {
-	      // do somethign
-	    }
+	
+	  if (this.limit === undefined) {
+	    this.dir = direction[this.random(2)];
+	    this.limit = globalExtrema[type] * this.dir;
 	  }
 	
 	  var newSpeed = this.rotationSpeed;
-	  if (400 < this.time && this.time < 900) {
-	    newSpeed += randomSpeed("smalls");
-	  } else if (900 < this.time && this.time < 1700) {
-	    newSpeed += randomSpeed("mids");
-	  } else if (1700 < this.time && this.time < 2300) {
-	    newSpeed += randomSpeed("highs");
-	  } else if (2300 < this.time && this.time < 3000) {
-	    newSpeed += randomSpeed("veryhighs");
-	  } else if (3000 < this.time && this.time < 6000){
-	    newSpeed += randomSpeed('veryhighs');
-	  } else if (6000 < this.time) {
-	    newSpeed += makeItWorse();
+	  newSpeed += speeds[type][this.random(3)] * this.dir;
+	  if (this.dir < 0) {
+	    if (newSpeed <= this.limit) {
+	      newSpeed = this.limit;
+	      this.dir = 1;
+	      this.limit = globalExtrema[type] * this.dir;
+	    }
+	  } else {
+	    if (newSpeed >= this.limit) {
+	      newSpeed = this.limit;
+	      this.dir = -1;
+	      this.limit = globalExtrema[type] * this.dir;
+	    }
 	  }
+	
+	  return newSpeed;
+	};
+	//alternate implementation in progress
+	Game.prototype.handleRotationSpeed2 = function () {
+	
+	  var speeds = ['smalls', 'mids', 'highs', 'veryhighs'];
+	
+	  if (400 < this.time && this.time < 900) {
+	    this.rotationSpeed = this.randomSpeed(speeds[0]);
+	  } else if (900 < this.time && this.time < 1700) {
+	    this.rotationSpeed = this.randomSpeed(speeds[1]);
+	  } else if (1700 < this.time && this.time < 2300) {
+	    this.rotationSpeed = this.randomSpeed(speeds[2]);
+	  } else if (2300 < this.time && this.time < 3000) {
+	    this.rotationSpeed = this.randomSpeed(speeds[3]);
+	  } else if (3000 < this.time){
+	    this.rotationSpeed = this.randomSpeed(speeds[this.random(3) + 1]);
+	  }
+	  console.log(this.rotationSpeed);
 	};
 	
 	
 	Game.prototype.checkForCollision = function(walls) {
-	  walls.forEach(function(wall){
+	  walls.forEach(function(wall) {
 	    if (wall.distance < 140 && 125 < wall.distance &&
 	        wall.section === this.spaceMan.currentSection) {
 	      this.spaceMan.alive = false;
