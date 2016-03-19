@@ -33,7 +33,7 @@ GameView.prototype.startTimer = function () {
   setInterval(function(){
     timer.innerHTML = (this.time/100).toFixed(2);
     if (this.time > this.highScore) {
-      highScore.innerHTML = (this.time/100).toFixed(2);
+      highScore.innerHTML = ((this.time + 2)/100).toFixed(2);
     }
   }.bind(this), 10);
 };
@@ -102,6 +102,7 @@ GameView.prototype.bindKeyListeners = function () {
     } else if (e.keyCode === 37) {
       this.game.spaceMan.rightDown = true;
     } else if (e.keyCode === 32) {
+      e.preventDefault();
       this.handleHighScore();
       this.restartGame();
     } else if (e.keyCode === 81) {
