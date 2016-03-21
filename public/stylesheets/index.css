@@ -276,6 +276,7 @@ h1, h2, h3 {
     padding: 15px;
     background-color: rgba(0,0,0,.8);
     height: 90%;
+    font-weight: normal;
     color: white;
     transition: background-color, 0.5s, ease-in-out;
   }
@@ -326,6 +327,7 @@ h1, h2, h3 {
     background-color: rgba(0,0,0,.8);
     margin: 20px auto;
     transition: background-color, 0.5s, ease-in-out;
+    font-weight: normal;
   }
 
   .project-pic {
