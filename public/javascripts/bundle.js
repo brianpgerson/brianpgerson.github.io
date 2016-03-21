@@ -300,7 +300,6 @@
 	        })
 	      );
 	    }.bind(this));
-	
 	    this.walls = this.walls.concat(toAdd);
 	    }
 	};

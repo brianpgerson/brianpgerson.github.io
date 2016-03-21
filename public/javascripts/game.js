@@ -99,7 +99,6 @@ Game.prototype.addWalls = function () {
         })
       );
     }.bind(this));
-
     this.walls = this.walls.concat(toAdd);
     }
 };
