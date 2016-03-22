@@ -349,6 +349,7 @@ h1, h2, h3 {
   .project li, .project p {
     clear: both;
     font-size: 0.9em;
+    font-weight: normal;
   }
 
   .project p {
