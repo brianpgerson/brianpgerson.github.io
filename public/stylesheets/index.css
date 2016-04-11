@@ -220,6 +220,7 @@ h1, h2, h3 {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  padding-left: 0;
 }
 
 #connect-icons li {
@@ -240,10 +241,14 @@ h1, h2, h3 {
 }
 
 #twitter {
+  position: relative;
+  top: -1px;
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457917936/1457921384_43-twitter_gqv9q1.png');
 }
 
 #facebook {
+  position: relative;
+  top: -1px;
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457917936/1457921366_46-facebook_vyzts3.png');
 }
 
@@ -260,6 +265,8 @@ h1, h2, h3 {
 }
 
 #tumbler {
+  position: relative;
+  top: -1px;
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457917936/1457921451_55-tumblr_ipgcfu.png');
 }
 
