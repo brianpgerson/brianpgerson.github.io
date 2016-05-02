@@ -52,3 +52,15 @@ span {
   width: 500px;
   overflow: auto;
 }
+
+@media (max-width: 640px) {
+
+  section {
+    padding 5px;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+}
