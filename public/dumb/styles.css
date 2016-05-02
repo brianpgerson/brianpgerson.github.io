@@ -61,7 +61,7 @@ span {
 @media (max-width: 640px) {
 
   section {
-    padding 5px;
+    padding: 5px;
   }
 
   h3 {
