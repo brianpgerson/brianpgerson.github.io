@@ -1,0 +1,22 @@
+{
+  "name": "help-barley-come-home",
+  "version": "1.0.0",
+  "description": "help a cute dog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianpgerson/brianpgerson.github.io.git"
+  },
+  "author": "brian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianpgerson/brianpgerson.github.io/issues"
+  },
+  "homepage": "https://github.com/brianpgerson/brianpgerson.github.io#readme",
+  "dependencies": {
+    "responsive-bp": "^4.1.4"
+  }
+}

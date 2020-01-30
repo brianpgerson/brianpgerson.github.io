@@ -1,141 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>brian's cool website</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel=icon href=./public/images/favicon.ico sizes="16x16">
-  <link href='https://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./public/stylesheets/index.css" media="screen" title="no title" charset="utf-8">
-  <script src="https://code.jquery.com/jquery-1.12.1.js"   integrity="sha256-VuhDpmsr9xiKwvTIHfYWCIQ84US9WqZsLfR4P7qF6O8="   crossorigin="anonymous"></script>
-  <script src="./frontend/entry.js" charset="utf-8"></script>
-</head>
-<body>
-  <div class="header group">
-    <div class="circular-image"></div>
-    <h1 class="main-header-text">Hi, I'm Brian</h1>
-    <h3 class="main-header-text">I like to build cool things</h3>
-    <div class="horizontal-border"></div>
-  </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Your Page Description." />
+    <title>Your Page Title</title>
 
-  <div class="story-box-border">
-    <h2>My Story</h2>
-    <div class="story-box">
-      <p>
-        My path into software development started with markup. Building HTML and CSS templates for emails and static pages at work led me to build a website for friend's startup idea (for free, in exchange for patience). That first encounter with a real project (and programming in JavaScript) was a game changer.
-      </p>
-      <p>
-        I started staying late at the office, reading books like Eloquent JavaScript and The Good Parts, and building personal projects. Some of the engineers worked late too - they noticed, and gave me more to do. Introduced me to pair programming and drilled me on OOP principles. Made me feel like I was one of them already. I was rushing through my workday to get to the things I couldn't stop thinking about. I was hooked.
-      </p>
-      <p>
-        So when that company got bought in 2015, it was time to make my evening work my fulltime job. I joined the most rigorous Bay Area bootcamp I could find and devoted 1000+ hours over the course of three months to putting polish on my years of self-teaching, coding full-time and building out a portfolio in the process.
-      </p>
-      <p>
-        These days, you can find me building projects primarily in Ruby and JavaScript with tools like Rails and React. Feel free to check out a few recent ones below, and get in touch if you're looking for a web developer with an insatiable appetite for learning, a knack for (and startup experience in) product design, and an uncanny ability to befriend new dogs.
-      </p>
-    </div>
-  </div>
+    <link href="responsive.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    Your Body Content
 
+    <!-- id="carousel-2" class="carousel" data-carousel-mode="fade">
+      <!-- Carousel Indicators-->
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+      <!-- Carousel Items-->
+      <figure class="carousel-active">
+        <img
+          src="./public/images/barley1.png"
+          alt="barley"
+        />
+        <figcaption>
+          <h4>First Thumbnail label</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur ...</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="./public/images/barley1.png"
+          alt="barley"
+        />
+        <figcaption>
+          <h4>Second Thumbnail label</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur ...</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="./public/images/barley1.png"
+          alt="barley"
+        />
+        <figcaption>
+          <h4>Third Thumbnail label</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur ...</p>
+        </figcaption>
+      </figure>
+      <!-- Carousel Controls-->
+      <button><</button>
+      <button class="forward">></button>
+    </!-->
 
-  <div class="projects-container">
-    <div class="story-to-projects-border-el"></div>
-    <h2>Projects</h2>
-    <div class="project group">
-      <a class="project-pic-link" href="http://www.noisecave.com" target="_blank"><div class="project-pic"></div></a>
-      <p>
-        <span class="bold">
-          <a href="http://www.noisecave.com" target="_blank">noisecave</a>
-        </span> - <span>Ruby, Ruby on Rails, JavaScript, React.js, HTML, CSS - </span> <a href="http://www.github.com/brianpgerson/noisecave" target="_blank">Github</a><br>
-        <span class="italic">
-          Single-page web app for uploading, organizing, exploring, and listening to music
-        </span><br>
-        <p>
-        <li>Implements AWS S3's Ruby SDK to generate pre-signed URLs for safe, fast user uploads of media files </li>
-        <li>Streams music throughout browsing; keeps queue/playlist state across the site </li>
-        <li>Uses custom client and server-side authentication without disrupting single-page flow</li>
-      </p>
-      </p>
-      </p>
-    </div>
-    <div class="project group">
-      <a class="project-pic-link" href="/public/ultra.html" target="_blank"><div class="project-pic"></div></a>
-      <p>
-        <span class="bold">
-          <a href="/public/ultra.html" target="_blank">Ultra Hexagon</a>
-        </span> - <span>JavaScript, HTML5, CSS3 - </span><a href="http://www.github.com/brianpgerson/ultra-hexagon" target="_blank">Github</a><br>
-        <span>
-          <span class="italic">
-            Object-oriented action/puzzle game inspired by Super Hexagon
-          </span>
-        </span><br>
-        <p>
-          <li>Dynamically creates pseudo-random obstacles and chooses from a range of rotation speeds and difficulties</li>
-          <li>Game elements are all drawn as geometrically defined HTML5 canvas objects</li>
-        </p>
-      </p>
-    </div>
-    <div class="project group">
-      <a class="project-pic-link" href="http://www.github.com/brianpgerson/terminal-chess" target="_blank"><div class="project-pic"></div></a>
-      <p>
-        <span class="bold">
-          <a href="http://www.github.com/brianpgerson/terminal-chess" target="_blank">Terminal Chess</a>
-        </span> - <span>Ruby</span> - <a href="http://www.github.com/brianpgerson/terminal-chess" target="_blank">Github</a><br>
-        <span>
-          <span class="italic">
-            Object-oriented multiplayer chess written in Ruby and playable in the terminal
-          </span>
-        </span><br>
-        <p>
-          <li>Implements deep board duping to check validity of player moves and determine check/checkmate status</li>
-          <li>Programmatically finds, validates, and highlights possible moves for selected pieces</li>
-        </p>
-      </p>
-    </div>
-    <div class="project group">
-      <a class="project-pic-link" href="https://twitter.com/a_really_human/with_replies" target="_blank"><div class="project-pic"></div></a>
-      <p>
-        <span class="bold">
-          <a href="https://twitter.com/a_really_human/with_replies" target="_blank">Beep Boop Bot</a>
-        </span> - <span>Node.js - <a href="http://www.github.com/brianpgerson/beepboopbot" target="_blank">Github</a></span><br>
-        <span>
-          <span class="italic">
-            A nice bot that tells people on twitter whether or not she's a robot
-          </span>
-        </span><br>
-        <p>
-          <li>Uses the Twit module to consume the Twitter API in a simple Node server</li>
-          <li>Finds, follows, retweets, and converses with Twitter users using a naive language parser</li>
-        </p>
-      </p>
-    </div>
-  </div>
-
-  <div class="contact">
-    <div class="projects-to-contact-border-el"></div>
-    <h2>Get In Touch!</h2>
-    <div class="contact-text">
-    <p>
-      I'm always happy to chat, whether you're hoping to connect regarding:<br>
-      <p id="dumbpara">
-        - a project you're working on, <br>
-        - a team you think I could contribute to, <br>
-        - coding in general, <br>
-        - whether or not the Giants will repeat this year (of course they will), <br>
-        - etc, <br>
-        - (seriously) etc
-      </p>
-    </p>
-      <ul id="connect-icons">
-        <li><a href="https://github.com/brianpgerson" target="_blank"><div id="github"></div></a></li>
-        <li><a href="https://twitter.com/gerswayne" target="_blank"><div id="twitter"></div></a></li>
-        <li><a href="https://www.facebook.com/bpgerson" target="_blank"><div id="facebook"></div></a></li>
-        <li><a href="mailto:brianpgerson@gmail.com" target="_blank"><div id="email"></div></a></li>
-        <li><a href="https://www.linkedin.com/in/brianpgerson" target="_blank"><div id="linkedin"></div></a></li>
-        <li><a href="https://brianpgerson.tumblr.com" target="_blank"><div id="tumbler"></div></a></li>
-      </ul>
-    </div>
-  </div>
-
-
-</body>
+    <!-- Scripts at the bottom for improved performance. -->
+    <!-- jQuery, required for all responsive plugins. -->
+    <script src="vendor/jquery-2.1.4.min.js"></script>
+    <script src="responsive.min.js"></script>
+  </body>
 </html>
