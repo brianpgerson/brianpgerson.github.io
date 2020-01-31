@@ -8,6 +8,10 @@ body {
   color: ghostwhite;
 }
 
+.extra-big {
+  font-size: 4em;
+}
+
 .carousel-image {
   max-width: 100%;
   object-fit: contain;
