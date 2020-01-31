@@ -16,9 +16,9 @@ body {
   height: 500px;
 }
 
-.carousel > button > .opaque-background {
-  height: 3.5rem;
-  background-color: rgba(0,0,0,0.5);
+.opaque-background {
+  height: 3.5rem !important;
+  background-color: rgba(0,0,0,0.5) !important;
   border-radius: 5px;
 }
 
