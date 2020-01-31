@@ -3,3 +3,7 @@
   object-fit: contain;
   max-height: 100%;
 }
+
+.carousel-container {
+  max-height: 500px;
+}
