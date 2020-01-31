@@ -13,3 +13,7 @@
   background-color: rgba(0,0,0,0.5);
   border-radius: 5px;
 }
+
+.main-gradient { 
+  background-image: linear-gradient(to top right, rgb(0, 15, 179), rgb(10, 37, 178), rgb(21, 59, 177), rgb(31, 80, 175), rgb(42, 102, 174), rgb(52, 124, 173), rgb(63, 146, 172), rgb(73, 168, 171), rgb(84, 190, 170), rgb(94, 211, 168), rgb(105, 233, 167), rgb(115, 255, 166));
+}
