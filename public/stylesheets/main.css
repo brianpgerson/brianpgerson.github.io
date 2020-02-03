@@ -42,3 +42,29 @@ ul.less-padding {
 ul > li {
   margin-bottom: 10px;
 }
+
+.isCentered {
+  text-align: center;
+}
+
+#carousel-1 {
+  display: none;
+}
+
+#carousel-2 {
+  display: block;
+}
+
+@media only screen and (max-width: 800px) {
+  #carousel-1 {
+    display: block;
+  }
+
+  .mobile-carousel {
+    height: 360px;
+  }
+  
+  #carousel-2 {
+  display: none;
+  }
+}
