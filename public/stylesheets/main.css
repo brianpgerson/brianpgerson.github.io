@@ -64,7 +64,11 @@ ul > li {
     height: 360px;
   }
   
+  .carousel-image {
+    max-height: 375px;
+  }
+  
   #carousel-2 {
-  display: none;
+    display: none;
   }
 }
